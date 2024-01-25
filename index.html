@@ -350,7 +350,7 @@
   <script>
     const run = async () => {
       const projectData = await getProjectData();
-      await scaffolding.loadProject(projectData);
+      await loadProject(projectData);
       setProgress(1);
       loadingScreen.hidden = true;
       if (false) {
@@ -359,7 +359,7 @@
         launchScreen.hidden = false;
         launchScreen.addEventListener('click', () => {
           launchScreen.hidden = true;
-          scaffolding.start();
+          start();
         });
         launchScreen.focus();
       }
