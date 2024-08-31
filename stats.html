@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            border: 3px solid #007bff;
+            margin-right: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .header p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 200px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card h2 {
+            margin: 0 0 10px;
+        }
+        .stat-card p {
+            margin: 0;
+            font-size: 24px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="default-profile-pic.png" alt="Profile Picture" id="profilePic">
+            <div>
+                <h1 id="username">JohnDoe</h1>
+                <p>Token Balance: <span id="tokenBalance">0</span></p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h2>Recent Activity</h2>
+                <p id="recentActivity">No recent activity.</p>
+            </div>
+            <div class="stat-card">
+                <h2>Messages Sent</h2>
+                <p id="highestScore">0</p>
+            </div>
+        </div>
+        <a href="login.html" class="button">Log Out</a>
+        <a href="chat.html" class="button">Chat</a>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+</html>
