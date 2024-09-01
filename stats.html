@@ -1,111 +1,523 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="faviconimg.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<style>
+    img {
+        width: 50px;
+    }
+    .bg_img }
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: 50%;
+        left: 50%;
+        z-index: -9999;
+        background-size: 550px;
+        background-position: -100px -100px;
+        background-image: url("https://ac.blooket.com/dashboard/assets/BlookCheckers-BykpA7vd.png");
+        transform: translate(-50%, -50%) rotate(15deg);
+        opacity: 0.1;
+    .logout_button {
+        margin-top: auto;
+        margin-bottom: 2vh;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .blooks_great_container {
+        margin-left: 17vw;
+        padding: 2vh;
+        color: white;
+    }
+    .blook_item {
+        display: inline-block;
+        margin: 1vw;
+        text-align: center;
+    }
+    .blook_item img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+</head>
+<div class="token_container">
+    <object data="token.svg" style="width: 27px; height: 27px; margin-right: 0.5vw;"></object>
+</div>
+<img alt="Blooks Background" class="bg_img">
+        </div>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Stats</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodit Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+<style>
+body {
+margin: ;
+padding: 0;
+font-family: 'Titan One', sans-serif;
+background-color: orange;      /* Orangish-yellow background color for the entire page */
+display: flex;
+}
+
+#sidebar {
+width: 200px;
+height: 100%;
+background-color: #FFA900;
+/* Orange background color for the sidebar */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 20px;
+box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+/* Sidebar shadow for separation */
+}
+
+#content {
+flex: 1;
+padding: 20px;
+}
+.token-button {
+display: block;
+  box-shadow: 0 2px 5px rgba(128, 0, 0, .2);
+}
+/* Button styles */
+.sidebar-button {
+display: block;
+width: 75%;
+padding: 10px;
+margin-bottom: 10px;
+background-color: Orange;
+font-family: 'Titan One', sans-serif;
+/* Orange background color for buttons */
+color: #fff;
+/* White text color */
+text-decoration: none;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+box-shadow: 0 2px 5px rgba(128, 0, 0, .2);
+/* drop shadow for buttons */
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.sidebar-button:hover {
+background-color: #FF8C00;
+/* Darker orange on hover */
+}
+
+/* News Popup styles */
+#news-popup {
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: #FFA900;
+/* White background color for the popup */
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Popup shadow for separation */
+display: none;
+}
+
+#close-popup {
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+}
+
+h1 {
+font-family: 'Titan One', sans-serif;
+color: #fff;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+p {
+font-family: 'Titan One', sans-serif;
+color: #fff;
+background-color: #fff;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(128, 0, 0, .2)
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div id="sidebar">
+<h1>Foodit</h1>
+<a class="sidebar-button" href="stats.html">Stats</a>
+<a class="sidebar-button" href="market.html">Market</a>
+<a class="sidebar-button" href="foods.html">Foods</a>
+<a class="sidebar-button" href="chat.html">Chat</a>
+<a class="sidebar-button"
+href="sellers.html">Auction</a>
+<a class="sidebar-button" href="adminpanel.html">Panel</a>
+<a class="sidebar-button" href="settings.html">Settings</a>
+<a class="sidebar-button" href="events.html">Events</a>
+<a class="sidebar-button" href="credits.html">Credits</a>
+<a class="sidebar-button" id="news-button">News</a>
+<a class="sidebar-button" href="logout.html">Log Out</a>
+
+</html>
+
+<!---Visit Store--->
+<a class="styles__plusButton___2dH73-camelCase" href="/store.html"><i
+class="fas fa-dollar-sign styles__plusIcon___3DQkg-camelCase" aria-hidden="true"></i>Visit the Store</a>
+
+<style>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="faviconimg.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+apiKey: "AIzaSyDUxJwmSSyZ9ljPQOIpmM4W1HW6G9r1alc",
+authDomain: "foodit-4e270.firebaseapp.com",
+projectId: "foodit-4e270",
+storageBucket: "foodit-4e270.appspot.com",
+messagingSenderId: "130319669807",
+appId: "1:130319669807:web:ad1d087a22d1ca069d84da",
+measurementId: "G-V05MHG1H4E"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        img {
+            width: 50px;
         }
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 1000px;
-            padding: 20px;
+        .bg_img {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: 50%;
+            left: 50%;
+            z-index: -9999;
+            background-size: 550px;
+            background-position: -100px -100px;
+            background-image: url("https://ac.blooket.com/dashboard/assets/BlookCheckers-BykpA7vd.png");
+            transform: translate(-50%, -50%) rotate(15deg);
+            opacity: 0.1;
+        .logout_button {
+            margin-top: auto;
+            margin-bottom: 2vh;
+            background: none;
+            border: none;
+            
+            cursor: pointer;
+        }
+        .blooks_great_container {
+            margin-left: 17vw;
+            padding: 2vh;
+            color: white;
+        }
+        .blook_item {
+            display: inline-block;
+            margin: 1vw;
             text-align: center;
         }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .header img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            border: 3px solid #007bff;
-            margin-right: 20px;
-        }
-        .header h1 {
-            margin: 0;
-            color: #333;
-        }
-        .header p {
-            margin: 5px 0;
-            color: #666;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .stat-card {
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 200px;
-            margin: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .stat-card h2 {
-            margin: 0 0 10px;
-        }
-        .stat-card p {
-            margin: 0;
-            font-size: 24px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .button:hover {
-            background-color: #0056b3;
+        .blook_item img {
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="default-profile-pic.png" alt="Profile Picture" id="profilePic">
-            <div>
-                <h1 id="username">JohnDoe</h1>
-                <p>Token Balance: <span id="tokenBalance">0</span></p>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-card">
-                <h2>Recent Activity</h2>
-                <p id="recentActivity">No recent activity.</p>
-            </div>
-            <div class="stat-card">
-                <h2>Messages Sent</h2>
-                <p id="highestScore">0</p>
-            </div>
-        </div>
-        <a href="login.html" class="button">Log Out</a>
-        <a href="chat.html" class="button">Chat</a>
+<body style="background-color: #FFAE42; overflow: hidden; font-family: Nunito, sans-serif; ">
+    <div class="token_container">
+        <object data="token.svg" style="width: 27px; height: 27px; margin-right: 0.5vw;"></object>
     </div>
+    <img alt="Blooks Background" class="bg_img">
+            </div>
 
-    <script src="stats.js"></script>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard</title>
+<link
+href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+rel="stylesheet"
+/>
+<style>
+body {
+margin: 0;
+padding: 0;
+font-family: "Titan One", sans-serif;
+background-color: #D48E03; /* Bright red background color for the entire page */
+      background-image: url('images/checkers.jpg');
+background-size: fit;
+background-position: center;
+color: white;
+display: flex;
+}
+
+#sidebar {
+width: 5.4cm;
+height: 100%;
+background-color: #FFA900; /* red background color for the sidebar */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 20px;
+box-shadow: 2px 0 5px 
+rgba(212, 142, 3, 1)); /* Sidebar shadow for separation */
+border-radius: 5px;
+}
+
+#content {
+flex: 1;
+padding: 20px;
+}
+
+.black-button {
+        display: block;
+width: 80%;
+padding: 10px;
+margin-bottom: 10px;
+background-color: black; /* dark red background color for buttons */
+color: red; /* White text color */
+text-decoration: none;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+        box-shadow: 0 2px 5px rgba(128, 0, 0, 1); /* drop shadow for buttons */
+font-family: "Titan One"
+}
+
+
+
+
+/* Button styles */
+.sidebar-button {
+display: block;
+width: 80%;
+padding: 10px;
+margin-bottom: 10px;
+background-color: #FF9A00; /* dark red background color for buttons */
+color: #fff; /* White text color */
+text-decoration: none;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+        box-shadow: 0 2px 5px rgba(128, 0, 0, .2; /* drop shadow for buttons */
+font-family: "Titan One"
+}
+
+.sidebar-button:hover {
+background-color: #9d0000; /* darker red on hover */
+}
+
+/* News Popup styles */
+#news-popup {
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: #d40000; /* White background color for the popup */
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Popup shadow for separation */
+display: none;
+}
+
+#close-popup {
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+}
+
+/* Styles for all text elements */
+h1, h2, p, a {
+color: white; /* Set text color to white */
+text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+/* Add drop shadow to text */
+}
+</style>
+</head>
+<body>
+<!-- Sidebar -->
+
+
+<!-- Content area -->
+<div id="content">
+<div id="stats-container">
+<h1></h1>
+<div style="display: flex; align-items: center; justify-content: space-between; background-color: #FFA900; /* dark yellow orange background */
+    padding: 10px;
+    border-radius: 5px; /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* drop shadow */">
+  <p id="blooks-unlocked">Blooks Unlocked: 0</p>
+  <p id="chat-messages-count">Messages: 0</p>
+  <p id="packs-opened">Packs Opened: 0</p>
+  <p id="token-counter">Tokens: 0</p>
+</div>
+
+<!-- Button to claim tokens -->
+<button id="claim-button" onclick="claimTokens()" class="sidebar-button" style="font-family: 'Titan One', sans-serif; width: 30%; background-color: transparent; box-shadow: none;          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+;">
+  Claim Daily Tokens
+</button>
+</div>
+<!-- Pop-up notification -->
+<div id="notification"></div>
+</div>
+
+<!-- News Popup -->
+<div id="news-popup">
+<div id="close-popup" onclick="closeNewsPopup()">X</div>
+<h2>Latest News</h2>
+<p>
+New Update which you can now officially sign in with google onto our website easier and faster! We are currently on version 1.1.0
+</p>
+
+<p>
+Welcome to Foodit! Foodit is the first blooket private server with food involved. We are currently on version 1.0.0.
+</p>
+</div>
+
+<script>
+// Function to toggle the news popup
+function toggleNewsPopup() {
+var popup = document.getElementById("news-popup");
+popup.style.display =
+  popup.style.display === "block" || popup.style.display === ""
+    ? "none"
+    : "block";
+}
+
+// Function to close the news popup
+function closeNewsPopup() {
+document.getElementById("news-popup").style.display = "none";
+}
+
+// Add click event listener to the news button
+document
+.getElementById("news-button")
+.addEventListener("click", toggleNewsPopup);
+
+// Function to claim tokens
+    function claimTokens() {
+// Check if tokens have already been claimed today
+var lastClaimDate = localStorage.getItem("lastClaimDate");
+var today = new Date().toLocaleDateString();
+
+if (lastClaimDate === today) {
+  // Tokens already claimed today
+  showNotification("You have already claimed your daily tokens.");
+} else {
+  // Claim tokens
+  var tokensClaimed = 1000;
+  var currentTokens = parseInt(localStorage.getItem("userTokens")) || 0;
+  var newTokens = currentTokens + tokensClaimed;
+
+  // Update local storage with new token count and claim date
+  localStorage.setItem("userTokens", newTokens);
+  localStorage.setItem("lastClaimDate", today);
+
+  // Update the token counter on the page
+  document.getElementById("token-counter").textContent =
+    "Tokens: " + newTokens;
+
+  // Display pop-up notification
+  showNotification(
+    "You have claimed " +
+      tokensClaimed +
+      " tokens. Total tokens: " +
+      newTokens,
+  );
+}
+}
+
+// Function to display pop-up notification
+function showNotification(message) {
+var notificationElement = document.getElementById("notification");
+notificationElement.textContent = message;
+notificationElement.style.display = "block";
+
+// Hide the notification after a delay (e.g., 3 seconds)
+setTimeout(function () {
+  notificationElement.style.display = "none";
+}, 3000);
+}
+
+// Initialize user stats from local storage
+function initializeUserStats() {
+var blooksUnlocked =
+  parseInt(localStorage.getItem("blooksUnlocked")) || 0;
+var chatMessagesCount =
+
+parseInt(localStorage.getItem("chatMessagesCount")) || 0;
+var packsOpened = parseInt(localStorage.getItem("packsOpened")) || 0;
+var userTokens = parseInt(localStorage.getItem("userTokens")) || 0;
+
+document.getElementById("blooks-unlocked").textContent =
+  "Blooks Unlocked: " + blooksUnlocked;
+document.getElementById("chat-messages-count").textContent =
+  "Messages: " + chatMessagesCount;
+document.getElementById("packs-opened").textContent =
+  "Packs Opened: " + packsOpened;
+document.getElementById("token-counter").textContent =
+  "Tokens: " + userTokens;
+}
+
+// Initialize the user stats on page load
+window.onload = initializeUserStats;
+</script>
 </body>
 </html>
+
+
+
