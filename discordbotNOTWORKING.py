@@ -56,6 +56,5 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 client.login(
-  process.env.MTI4MDI1NDQ4NDc5MDExNjQ2NA.GeOv9L.4uaeEZflHBfMVdpp2e2IcnLMd2OlR41sc4P69U.GKKBQQ
-  .Oj7st5GbPz2_Tgphmx06YRPdfyQnxOkpmNBdB8,
+  process.env.MTI4MDI1NDQ4NDc5MDExNjQ2NA.GeOv9L.4uaeEZflHBfMVdpp2e2IcnLMd2OlR41sc4P69U,
 );
