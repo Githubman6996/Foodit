@@ -129,7 +129,7 @@ client.on('interactionCreate', async interaction => {
       return interaction.reply({ content: 'User not found.', ephemeral: true });
     }
 {
-  "token": "YOUR_BOT_TOKEN_HERE",
+  "token": "MTI4MDI1NDQ4NDc5MDExNjQ2NA.GUmgWT.phfH9OsYh7Lh40QtPF4Q6lKJx5QRh4tMPzZzJ8",
   "clientId": "YOUR_CLIENT_ID_HERE",
   "guildId": "YOUR_GUILD_ID_HERE"
 }
