@@ -24,7 +24,7 @@ async def on_ready():
     print(f'Logged in as {bot.user.name}')
     ping_channel.start()
 
-@tasks.loop(hours=1)
+@tasks.loop(minutes=30)
 async def ping_channel():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
