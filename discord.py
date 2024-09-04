@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 # Replace 'your_bot_token' with your bot's token
-TOKEN = 'MTI4MDI1NDQ4NDc5MDExNjQ2NA.G6BkRb.pjcuCgXhVwwJOGqtV1cb82O4xecEY99kBwqtE0'
+TOKEN = 'MTI4MDI1NDQ4NDc5MDExNjQ2NA.GKhcAr._5Cxw8mY9zpmZkPrcRpUXcKyl5d5PQXqgj9AWM'
 # Replace 'your_channel_id' with the ID of the channel where you want to send the message
 CHANNEL_ID = 1246092256524374158  # replace with your channel ID
 
